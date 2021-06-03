@@ -1,0 +1,13 @@
+---
+- name: Configure Logstash files.
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/logstash/conf.d/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+  loop:
+    - 01-beats-input.conf
+    - 02-local-syslog-input.conf
+    - 30-elastic-output.conf
+  notify: restart logstash

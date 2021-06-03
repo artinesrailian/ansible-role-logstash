@@ -1,2 +1,9 @@
 ---
-# tasks file for logstash
+- name: Include OS Specific Java setup.
+  include: setup-java-{{ ansible_os_family }}.yml
+
+- name: Include OS Specific setup tasks.
+  include: setup-logstash-{{ ansible_os_family }}.yml
+
+- name: Include configuration tasks.
+  include: config.yml

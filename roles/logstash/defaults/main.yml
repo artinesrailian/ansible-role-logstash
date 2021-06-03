@@ -1,2 +1,7 @@
 ---
-# defaults file for logstash
+java_ubuntu: openjdk-11-jdk
+java_redhat: java-1.8.0-openjdk
+logstash_version: '7.x'
+logstash_listen_port_beats: 5044
+logstash_local_syslog_path: /var/log/syslog
+logstash_elasticsearch_host: http://localhost:9202

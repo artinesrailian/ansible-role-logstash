@@ -1,0 +1,5 @@
+---
+- name: Ensure Java is installed on {{ ansible_os_family }}.
+  apt:
+    name: "{{ java_ubuntu }}"
+    state: present
