@@ -1,31 +1,41 @@
-Role Name
+Ansible Role: Logstash
 =========
 
-A brief description of the role goes here.
-
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role is compatible with RedHat/CentOS 7 and Ubuntu 18.04
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+  java_ubuntu: openjdk-11-jdk
 
-Dependencies
-------------
+The Java version to be installed on Ubuntu
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+  java_redhat: java-1.8.0-openjdk
+
+The Java version to be installed on CentOS/RedHat
+
+  logstash_version: '7.x'
+
+The major version of the Logstash to be installed
+
+  logstash_listen_port_beats: 5044
+
+The port which Logstash will listen for beats
+
+  logstash_local_syslog_path: /var/log/syslog
+
+The local syslog file path
+
+  logstash_elasticsearch_host: http://localhost:9202
+
+The Elasticsearch host address where Logstash will send the logs
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - artinesrailian.logstash
 
 License
 -------
@@ -35,4 +45,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+The role was created in 2021 by [Artin Esrailian](https://github.com/artinesrailian/).
