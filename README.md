@@ -33,9 +33,10 @@ The Elasticsearch host address where Logstash will send the logs
 Example Playbook
 ----------------
 
-    - hosts: servers
+    - hosts: all
       roles:
-         - artinesrailian.logstash
+        - role: artinesrailian.logstash
+          become: true
 
 License
 -------
