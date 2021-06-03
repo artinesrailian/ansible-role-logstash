@@ -1,6 +1,0 @@
----
-- name: Install Logstash.
-  hosts: all
-  become: true
-  roles:
-    - logstash
